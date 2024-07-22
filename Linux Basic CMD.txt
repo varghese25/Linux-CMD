@@ -1,0 +1,44 @@
+mkdir - create new Directory with given name
+cd - change to Directory
+touch - create empty files
+cat - create new file and writes the content and ctrl+D to save the content into file.
+cat file1 file > file 3 - creates  file and content of both files will copied to new file
+cat - Display content file
+ls - list the content of Directory 
+ls *.txt - list the content of Directory
+pwd - current working Directory
+cp - copy or directory
+mv - moves a file or Directory
+head - Display first 10 Lines of a file
+tail - Display last 10 Lines of a file
+tac - Display file content lines in reverse
+more - similar to cat and here we can display large content by using ENTER, SPACEBAR
+id -  Display id of user / group
+vi - editor to write programs of text
+grep - Filter to search given pattern in the file content
+diff - Compares the content of two different files
+ping - Check the connectivity status of server
+history - Review all the commands which you have entered
+hostname -Display hostname
+hostname -i : display host ip
+chmod - change the user/group permissions to access file
+nl - Display the Line numbers
+wc - Give number of lines, words and characters available in the file content
+uniq - Removes duplicates of the file content/ It can removes only continues duplicates
+rmdir - Removes the specified directory (directory  should be empty)
+rm - Remove file directory (Directory need not be empty)
+~ System dir - to check system directory
+/ user dir - is bash dirctory
+
+
+-------------Permisiion Give to particular File-----------------------------------
+ admin rwx (read -r / Write -w / Execute -x)
+ group rw  (read -r / Write -w)
+ public rx (read -r /Execute -x)
+ 
+1-execute 2-write 4-read
+ thinuser@suntec-Wyse-5470:~/Desktop$ chmod 764 test
+thinuser@suntec-Wyse-5470:~/Desktop$ ls -l test
+-rwxrw-r-- 1 thinuser thinuser 0 Jun 27 16:57 test
+thinuser@suntec-Wyse-5470:~/Desktop$ 
+-----------------------------------------------------------------------
