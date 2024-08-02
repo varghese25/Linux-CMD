@@ -42,3 +42,112 @@ thinuser@suntec-Wyse-5470:~/Desktop$ ls -l test
 -rwxrw-r-- 1 thinuser thinuser 0 Jun 27 16:57 test
 thinuser@suntec-Wyse-5470:~/Desktop$ 
 -----------------------------------------------------------------------
+
+
+
+
+Step 1: Install WSL
+Open PowerShell as Administrator:
+
+Right-click the Start button and select Windows PowerShell (Admin).
+Install WSL:
+
+Run the following command to install WSL and set WSL 2 as the default version:
+
+wsl --install
+
+
+Restart Your Computer:
+
+Restart your computer to complete the installation.
+Step 2: Set Up Your Linux Distribution
+Launch Your Linux Distribution:
+
+After restarting, open the Start menu and find the installed Linux distribution (e.g., Ubuntu).
+Click on the distribution to open it. This will launch a terminal window for the first-time setup.
+Create a User Account:
+
+When prompted, enter a username and password to create a new user account.
+Step 3: Use Linux Commands in WSL
+Open the WSL Terminal:
+
+You can open your Linux distribution from the Start menu or by typing the distribution name (e.g., "Ubuntu") in the Start menu search bar.
+Run Linux Commands:
+
+In the WSL terminal, you can now run Linux commands just like you would on a native Linux system. For example:
+bash
+Copy code
+ls          # List directory contents
+cd          # Change directory
+pwd         # Print working directory
+touch file  # Create an empty file named 'file'
+mkdir dir   # Create a directory named 'dir'
+rm file     # Remove the file named 'file'
+Step 4: Use VSCode with WSL
+Install VSCode:
+
+Download and install Visual Studio Code from the official VSCode website.
+Install the Remote - WSL Extension:
+
+Open VSCode.
+Open the Extensions view by clicking on the Extensions icon in the Activity Bar or by pressing Ctrl+Shift+X.
+Search for "Remote - WSL" and install it.
+Open a WSL Terminal in VSCode:
+
+Open the Command Palette by pressing Ctrl+Shift+P.
+Type Remote-WSL: New Window and select it.
+This will open a new VSCode window connected to your WSL instance.
+Open a Folder in WSL:
+
+In the new VSCode window, open the Command Palette again (Ctrl+Shift+P).
+Type Remote-WSL: Open Folder and select a folder from your WSL filesystem.
+Use the Integrated Terminal:
+
+Open the terminal in VSCode by selecting Terminal > New Terminal from the top menu or by pressing Ctrl+` (backtick).
+The terminal will default to the WSL shell, allowing you to run Linux commands directly.
+Common Linux Commands
+Here are some common Linux commands you can run in your WSL terminal:
+
+File and Directory Management:
+
+bash
+Copy code
+ls                # List directory contents
+cd /path/to/dir   # Change directory to /path/to/dir
+pwd               # Print working directory
+mkdir newdir      # Create a directory named 'newdir'
+touch newfile     # Create an empty file named 'newfile'
+cp file1 file2    # Copy 'file1' to 'file2'
+mv file1 file2    # Move or rename 'file1' to 'file2'
+rm file           # Remove the file named 'file'
+System Information:
+
+bash
+Copy code
+uname -a          # Print system information
+df -h             # Display disk space usage
+free -h           # Display memory usage
+top               # Display running processes
+Package Management (for Ubuntu/Debian-based systems):
+
+bash
+Copy code
+sudo apt update        # Update package lists
+sudo apt upgrade       # Upgrade installed packages
+sudo apt install pkg   # Install a package named 'pkg'
+sudo apt remove pkg    # Remove a package named 'pkg'
+Conclusion
+By following these steps, you can effectively use Linux commands within WSL on your Windows machine. WSL provides a powerful and convenient way to run a Linux environment alongside your Windows applications, making it ideal for development, scripting, and learning purposes.
+
+
+
+
+
+
+
+
+
+
+
+
+
