@@ -1,5 +1,21 @@
 Linux
 
+# Absolute Path vs Relative Path
+
+## Absolute Path
+- Example: `ls /var/log/`
+- Starts with `/` (root directory).
+- It specifies the complete path from the root (`/`) to the target directory or file.
+- It works from anywhere in the system.
+
+## Relative Path
+- Example: `ls var/log`
+- Does NOT start with `/`.
+- It specifies the path relative to your current working directory.
+- It works only if the path exists from your current location.
+
+
+
 
 Basic Linux Navigation Commands
 
