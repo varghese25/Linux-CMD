@@ -1,6 +1,29 @@
 Linux
 
+# Linux File Permision
 
+```bash
+varghese@DESKTOP-OODIU93:~/temp$ ls -lrt
+total 8
+-rw-r--r-- 1 varghese varghese  6 Mar  3 12:15 tiju
+-rw-r--r-- 1 varghese varghese 17 Mar  3 12:36 script1.sh
+
+varghese@DESKTOP-OODIU93:~/temp$ ./script1.sh
+-bash: ./script1.sh: Permission denied
+
+varghese@DESKTOP-OODIU93:~/temp$ ls -lrt script1.sh
+-rw-r--r-- 1 varghese varghese 17 Mar  3 12:36 script1.sh
+
+varghese@DESKTOP-OODIU93:~/temp$ chmod u=rwx script1.sh
+
+varghese@DESKTOP-OODIU93:~/temp$ ls -lrt script1.sh
+-rwxr--r-- 1 varghese varghese 17 Mar  3 12:36 script1.sh
+
+varghese@DESKTOP-OODIU93:~/temp$ ./script1.sh
+Tue Mar  3 13:02:41 EST 2026
+
+varghese@DESKTOP-OODIU93:~/temp$
+```
 
 
 
