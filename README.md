@@ -26,6 +26,23 @@ varghese@DESKTOP-OODIU93:~/temp$
 ```
 
 
+## Granting Permission to Other Users
+
+The `chmod` command can be used to modify file permissions.  
+Here we grant **read, write, and execute permissions** to **other users**.
+
+### Command
+
+```bash
+chmod o=rwx script1.sh
+
+| Section | Meaning                 |
+| ------- | ----------------------- |
+| `rwx`   | Owner permissions       |
+| `r--`   | Group permissions       |
+| `rwx`   | Other users permissions |
+
+
 
 # Absolute Path vs Relative Path
 
