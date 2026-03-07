@@ -1,5 +1,224 @@
 Linux
 
+
+
+Linux Commands Notes
+1. File Permissions
+Change File Permission
+chmod u=rwx,g=rwx,o=r script1.sh
+
+Check permissions:
+
+ls -l script1.sh
+
+Output:
+
+-rwxrwxr-- 1 varghese varghese 17 Mar 3 12:36 script1.sh
+Permission Meaning
+-rwxrwxr--
+Symbol	Meaning
+-	File
+d	Directory
+r	Read
+w	Write
+x	Execute
+2. Directory Permissions
+
+Check directory permissions:
+
+ls -lrtd testing/
+
+Output:
+
+drwxr-xr-x 2 varghese varghese 4096 Mar 7 12:16 testing/
+
+Explanation:
+
+d -> directory
+r -> read
+w -> write
+x -> execute (enter directory)
+
+If x permission exists, users can enter the directory.
+
+Restrict Other Users
+chmod 774 testing/
+
+Check permission:
+
+ls -lrtd testing/
+
+Output:
+
+drwxrwxr-- 2 varghese varghese 4096 Mar 7 12:16 testing/
+Folder Permission Read & Execute
+chmod 775 testing/
+
+Output:
+
+drwxrwxr-x 2 varghese varghese 4096 Mar 7 12:16 testing/
+
+Meaning:
+
+Owner → Read, Write, Execute
+
+Group → Read, Write, Execute
+
+Others → Read, Execute
+
+Full Permission
+chmod 777 testing/
+
+Output:
+
+drwxrwxrwx 2 varghese varghese 4096 Mar 7 12:16 testing/
+
+Meaning: Everyone has Full Access
+
+3. Change Ownership
+
+Change owner from varghese → tiju
+
+sudo chown tiju:tiju testing
+
+Check:
+
+ls -lrtd testing/
+
+Output:
+
+drwxrwxrwx 2 tiju tiju 4096 Mar 7 12:16 testing/
+Package Management
+Package Formats
+Format	Description
+.deb	Debian package
+.rpm	RedHat Package Manager
+Install Package Using dpkg
+sudo dpkg -i package.deb
+apt Package Manager
+
+Similar to Play Store for Linux.
+
+Install multiple packages:
+
+sudo apt install docker.io ansible curl wget
+List Installed Packages
+sudo dpkg -l
+
+Example Output:
+
+ii  adduser              3.118ubuntu5
+ii  adwaita-icon-theme   41.0-1ubuntu1
+
+ii means package is installed
+
+Search Package
+
+Example: Search Docker
+
+sudo apt-cache search docker
+Find Installed Package Using grep
+
+Example:
+
+sudo dpkg -l | grep python
+
+Output:
+
+ii libpython3-stdlib
+ii libpython3.10
+Apache Installation Example
+
+Install Apache:
+
+sudo apt install apache2
+
+Check installed packages:
+
+sudo dpkg -l | grep apache2
+
+Output:
+
+ii apache2
+ii apache2-bin
+
+ii → Installed package
+
+Remove Package
+Remove Package Only
+sudo apt remove apache2
+Purge Package
+
+Remove package + config + documentation
+
+sudo apt purge apache2
+
+Check remaining packages:
+
+sudo dpkg -l | grep apache2
+
+Example remaining packages:
+
+apache2-bin
+apache2-data
+apache2-utils
+
+Remove all related packages:
+
+sudo apt purge apache2*
+
+Now check again:
+
+sudo dpkg -l | grep apache2
+
+Output:
+
+(no output)
+
+Apache completely removed.
+
+Process Management
+Check Running Processes
+ps -ef
+
+Example:
+
+UID   PID  PPID  C STIME TTY  TIME CMD
+
+More info:
+
+man ps
+Process Management Example
+
+Create script:
+
+script.sh
+
+Example content:
+
+sleep 120
+
+Run script:
+
+sh script.sh
+Check Running Script
+ps -ef | grep -i script.sh
+
+Output:
+
+varghese 36384 115 0 13:42 pts/0 00:00:00 sh script.sh
+
+PID of script: 36384
+
+Kill Process
+sudo kill -9 36384
+
+This will forcefully terminate the process.
+
+
+
+
+
 # Linux File Permision
 
 ```bash
