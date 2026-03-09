@@ -1,6 +1,120 @@
 Linux
 
 
+1️⃣ Apache Service Management
+
+You successfully installed and managed Apache HTTP Server. Below is a clean summary of the commands you used.
+
+Check Apache Status
+sudo systemctl status apache2
+
+Output shows:
+
+Active: running
+
+Apache processes running (/usr/sbin/apache2 -k start)
+
+This confirms the web server is working.
+
+Start Apache
+sudo systemctl start apache2
+
+Starts the Apache service.
+
+Stop Apache
+sudo systemctl stop apache2
+
+Stops the Apache web server.
+
+Restart Apache
+sudo systemctl restart apache2
+
+Restarts Apache after configuration changes.
+
+Enable Apache at Boot
+sudo systemctl enable apache2
+
+Automatically starts Apache when the system boots.
+
+Disable Apache at Boot
+sudo systemctl disable apache2
+
+Prevents Apache from starting automatically.
+
+Access Apache in Browser
+
+Open:
+
+http://localhost
+
+or
+
+http://127.0.0.1
+
+Default web directory in Ubuntu:
+
+/var/www/html
+2️⃣ Storage Management & Disk Information
+Check Disk Usage
+df -h
+
+Example output:
+
+Filesystem	Size	Used	Available	Use%	Mounted
+/dev/sdd	1TB	4GB	952GB	1%	/
+
+-h = human readable format.
+
+Show Block Devices
+lsblk
+
+Output explanation:
+
+Device	Type	Size	Mount
+sda	disk	388.6M	system
+sdb	disk	186M	system
+sdc	swap	1G	swap
+sdd	disk	1TB	main filesystem
+Install Disk Partition Tool
+sudo apt install fdisk
+
+Installs the fdisk utility.
+
+View Disk Partitions
+sudo fdisk -l
+
+Shows:
+
+Disk size
+
+Sector size
+
+Partition layout
+
+Example:
+
+Disk	Size	Sectors
+/dev/sdd	1TB	2147483648
+3️⃣ Important Notes
+
+You are running Ubuntu inside Windows Subsystem for Linux.
+
+Because of this:
+
+Apache runs inside Linux
+
+Browser runs in Windows
+
+So access Apache using:
+
+http://localhost
+
+from the Windows browser.
+
+
+
+
+
 
 Linux Commands Notes
 1. File Permissions
