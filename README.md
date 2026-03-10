@@ -1,6 +1,35 @@
 Linux
 
 
+# Corn Job Scheduler (Sample)
+
+- Corn Format in Linux Cmd_IMG & Below both are same
+
+* * * * * command-to-execute
+- - - - -
+
+| | | | |
+| | | | +---- Day of the Week (0 - 7, where both 0 and 7 are Sunday)
+| | | +------ Month (1 - 12)
+| | +-------- Day of the Month (1 - 31)
+| +---------- Hour (0 - 23)
++------------ Minute (0 - 59)
+
+Guide: Automating a Script with CronStep 1: Create the Shell ScriptCreate a file named script.sh in your home directory. This script contains the actual task you want to perform.File: /home/varghese/script.shBash#!/bin/bash
+
+# This line appends the current date and time to a log file
+echo "Test $(date)" >> /home/varghese/test_log.txt
+Note: Ensure the script is executable by running: chmod +x /home/varghese/script.shStep 2: Configure the Cron TableOpen your user's crontab configuration to schedule the task.Command:Bashcrontab -e
+Inside the editor (GNU nano):Scroll to the very bottom and add the following line. This tells the system to run your script every minute (* * * * *).Plaintext# m h  dom mon dow   command
+* * * * * /bin/bash /home/varghese/script.sh
+Press Ctrl + O, Enter to save, and Ctrl + X to exit.Step 3: Verify the OutputWait at least 60 seconds for the first cycle to trigger. Then, check the log file to see if the script is running automatically.Command:Bashcat /home/varghese/test_log.txt
+Expected Output:PlaintextTest Tue Mar 10 13:00:01 EDT 2026
+Test Tue Mar 10 13:01:01 EDT 2026
+Test Tue Mar 10 13:02:01 EDT 2026
+Summary of Key CommandsActionCommandEdit Cron Jobscrontab -eList Active Jobscrontab -lMake Script Executablechmod +x script.shCheck Script Manually./script.sh
+
+
+
 1️⃣ Apache Service Management
 
 You successfully installed and managed Apache HTTP Server. Below is a clean summary of the commands you used.
