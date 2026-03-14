@@ -1,5 +1,144 @@
 Linux
+Logs & Monitoring
+System Monitoring Commands
+varghese@DESKTOP-OODIU93:~/Data$ top
+top - 13:42:11 up 12 min,  0 users,  load average: 0.13, 0.63, 0.61
+Tasks:  40 total,   1 running,  39 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.4 us,  0.5 sy,  0.0 ni, 98.9 id,  0.0 wa,  0.0 hi,  0.2 si,  0.0 st
+MiB Mem :   3881.2 total,   2825.8 free,    418.2 used,    637.3 buff/cache
+MiB Swap:   1024.0 total,   1024.0 free,      0.0 used.   3314.1 avail Mem
+varghese@DESKTOP-OODIU93:~/Data$ free -m
+               total        used        free      shared  buff/cache   available
+Mem:            3881         418        2825          14         637        3314
+Swap:           1024           0        1024
+varghese@DESKTOP-OODIU93:~/Data$ vmstat
+procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
+ r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st
+ 0  2      0 2825464 108436 595640    0    0   147    10  106  125  1  1 74 24  0
+varghese@DESKTOP-OODIU93:~/Data$ iostat
+Linux 6.6.87.2-microsoft-standard-WSL2 (DESKTOP-OODIU93)  03/14/26  _x86_64_  (4 CPU)
 
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           0.91    0.00    1.14   20.60    0.00   77.34
+
+Device             tps    kB_read/s    kB_wrtn/s    kB_dscd/s
+sda               1.18        77.30         0.00         0.00
+sdb               0.16        11.53         0.00         0.00
+sdc               0.11         2.97         0.00         0.00
+sdd              25.52       381.53        32.45        21.93
+Log Files in Linux
+
+Most system and application logs are stored in the /var/log directory.
+
+varghese@DESKTOP-OODIU93:~/Data$ cd /var
+varghese@DESKTOP-OODIU93:/var$ ls -lrt
+
+Important directories inside /var:
+
+/var/log
+/var/cache
+/var/tmp
+/var/backups
+/var/www
+Log Directory
+varghese@DESKTOP-OODIU93:/var$ cd log
+varghese@DESKTOP-OODIU93:/var/log$ ls
+
+Example log files:
+
+alternatives.log
+auth.log
+dmesg
+dpkg.log
+kern.log
+syslog
+apache2/
+journal/
+Important Log Files
+1. dmesg (Kernel Messages)
+
+Shows kernel boot messages and hardware events.
+
+varghese@DESKTOP-OODIU93:/var/log$ cat dmesg
+
+Example:
+
+[    0.000000] kernel: Linux version 6.6.87.2-microsoft-standard-WSL2
+[    0.000000] kernel: Command line: initrd=\initrd.img WSL_ROOT_INIT=1
+
+Used for:
+
+Hardware detection
+
+Kernel boot messages
+
+Driver issues
+
+System startup troubleshooting
+
+2. syslog (System Logs)
+
+Shows system activities and background services like cron jobs.
+
+varghese@DESKTOP-OODIU93:/var/log$ cat syslog
+
+Example:
+
+Mar 8 17:49:59 DESKTOP-OODIU93 systemd[1]: rsyslog.service: Sent signal SIGHUP
+
+Used for:
+
+System events
+
+Service logs
+
+Scheduled jobs
+
+Error tracking
+
+Apache Logs
+
+Apache web server logs are stored in:
+
+/var/log/apache2/
+varghese@DESKTOP-OODIU93:/var/log$ cd apache2/
+varghese@DESKTOP-OODIU93:/var/log/apache2$ ls
+
+Example:
+
+access.log
+error.log
+error.log.1
+other_vhosts_access.log
+access.log
+
+Records all client requests to the web server.
+
+error.log
+
+Stores Apache server errors and warnings.
+
+Summary
+
+Important monitoring commands:
+
+Command	Purpose
+top	Real-time CPU and process monitoring
+free -m	Memory usage
+vmstat	System performance statistics
+iostat	Disk I/O statistics
+
+Important log files:
+
+Log File	Purpose
+dmesg	Kernel and hardware events
+syslog	System and service logs
+auth.log	Authentication logs
+kern.log	Kernel logs
+apache2/*	Apache web server logs
+
+Note:
+dmesg and syslog are both very important for Logs & Monitoring, especially for troubleshooting system issues and tracking events.
 
 # Corn Job Scheduler (Sample)
 
