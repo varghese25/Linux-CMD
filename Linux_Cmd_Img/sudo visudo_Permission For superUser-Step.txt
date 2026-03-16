@@ -1,0 +1,28 @@
+
+
+
+Evan Don't sudo permision for fdisk i gave permission . varghese@DESKTOP-OODIU93:~$ sudo visudo in this login editor
+
+# User privilege specification
+root    ALL=(ALL:ALL) ALL # Last means ALL access
+evan    ALL=(ALL:ALL)  NOPASSWD: /usr/sbin/fdisk # Removed Last ALL only for fdisk permission, How to find cmd ($ whereis fdisk) below
+# NOPASSWD it wont ask for password
+
+
+
+[sudo] password for evan:
+evan is not in the sudoers file.  This incident will be reported.
+$
+$
+$ sudo fdisk -l
+[sudo] password for evan:
+evan is not in the sudoers file.  This incident will be reported.
+$ pwd
+/home/evan
+$ whereis fdisk  # here is the cmd 
+fdisk: /usr/sbin/fdisk /usr/share/man/man8/fdisk.8.gz
+$ sudo fdisk -l
+[sudo] password for evan:
+Disk /dev/ram0: 4 MiB, 4194304 bytes, 8192 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 4096 bytes
